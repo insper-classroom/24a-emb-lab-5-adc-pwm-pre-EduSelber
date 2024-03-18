@@ -42,7 +42,7 @@ void process_task(void *p) {
                 vetor[4]=data;
                 
                 media=((vetor[4]+vetor[3]+vetor[2]+vetor[1]+vetor[0])/5);
-                printf("Media %d \n",media);
+                printf("%d\n",media);
             }
             // deixar esse delay!
             contador+=1;
