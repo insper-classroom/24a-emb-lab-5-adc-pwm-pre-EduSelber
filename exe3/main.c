@@ -35,7 +35,7 @@ void process_task(void *p) {
             }
             else{
                 vetor[contador]=(vetor[4]+vetor[3]+vetor[2]+vetor[1]+vetor[0])/5;
-                
+                printf("%d \n",vetor[contador]);
                 contador=0;
             }
             contador+=1;
