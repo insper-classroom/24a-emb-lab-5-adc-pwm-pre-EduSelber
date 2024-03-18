@@ -31,21 +31,17 @@ void process_task(void *p) {
     while (true) {
         if (xQueueReceive(xQueueData, &data, 100)) {
             // implementar filtro aqui!
-            if (contador<=4){
-                vetor[contador]=data;
-            }
-            else{
-                vetor[0]=vetor[1];
-                vetor[1]=vetor[2];
-                vetor[2]=vetor[3];
-                vetor[3]=vetor[4];
-                vetor[4]=data;
-                
-                media=((vetor[4]+vetor[3]+vetor[2]+vetor[1]+vetor[0])/5);
-                printf("%d\n",media);
-            }
+            vetor[0]=vetor[1];
+            vetor[1]=vetor[2];
+            vetor[2]=vetor[3];
+            vetor[3]=vetor[4];
+            vetor[4]=data;
+            
+            media=((vetor[4]+vetor[3]+vetor[2]+vetor[1]+vetor[0])/5);
+            printf("%d\n",media);
+        
             // deixar esse delay!
-            contador+=1;
+           
             vTaskDelay(pdMS_TO_TICKS(50));
 
         }
